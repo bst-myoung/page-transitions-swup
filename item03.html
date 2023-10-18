@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item03.html</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <main id="swup" class="transition-fade">
+        <div class="container">
+            <div class="content-page">
+                <h1>CIRCLE</h1>
+                <a href="index.html"><<&nbsp;戻る</a>
+                <img src="shape03.png" alt="">
+                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </div>
+        </div>
+    </main>
+    <div class="swup-overlay"></div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swupOverlay = document.querySelector('.swup-overlay');
+        const colorList = ['purple', 'blue', 'yellow', 'white'];
+        colorList.forEach(color => {
+            swupOverlay.classList.remove(color);
+        });
+        swupOverlay.classList.add("purple");
+    });
+</script>
+</html>

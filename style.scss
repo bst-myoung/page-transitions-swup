@@ -1,0 +1,202 @@
+$blue: #2775ff;
+$yellow: #ffda24;
+$purple: #a65aff;
+$white: #fff;
+$grey: #b3b3b3;
+
+html {
+    font-size: 16px;
+}
+body {
+    background: $grey;
+    font-family: 'Noto Sans Jp', sans-serif;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+}
+a, a:visited {
+    color: black;
+    text-decoration: none;
+}
+ul, li {
+    list-style: none;
+    font-weight: 800;
+    font-size: 125%;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    width: 90%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    will-change: opacity;
+    a:nth-child(n):hover  {
+        .grid-item:before {
+            transform: scale(1);
+        }
+    }
+    a:nth-child(n) .grid-item:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";        
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transform: scale(0);
+        transition: transform 0.15s ease;
+    }
+    a:nth-child(1) .grid-item:before  {
+        background-color: $blue;
+    }
+    a:nth-child(2) .grid-item:before  {
+        background-color: $yellow;
+    }
+    a:nth-child(3) .grid-item:before  {
+        background-color: $purple;
+    }
+    a:nth-child(4) .grid-item:before  {
+        background-color: $white;
+    }
+}
+.grid-item {
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35%;
+    box-shadow: 0 0 0 8px black;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 1.5rem 2rem;
+    box-sizing: border-box;
+    overflow: hidden;   
+    position: relative;
+
+    &:after {
+        content: ">>";
+    }   
+}
+
+.content-page { //下層ページ
+    h1 {
+        font-family: "Futura PT", "Noto Sans Jp", sans-serif;
+        font-size: 300%;
+        font-weight: 900;        
+        position: relative;
+        z-index: 1;
+        letter-spacing: 0.75em;
+        margin-bottom: 0;
+    }
+    img {
+        width: 95%;
+        max-width: 425px;
+        margin-top: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5rem;
+        display: block;
+    }
+    a {
+        font-weight: 900;
+        font-size: 90%;   
+        letter-spacing: 0.25em;
+    }
+    p {
+        letter-spacing: 0.125em;        
+        font-weight: 900;
+    }    
+}
+
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-row: repeat(4, 1fr);
+    }
+    .grid-item {        
+        background-size: 45%;
+    }
+    .content-page { 
+        h1 {
+            letter-spacing: 0.5em;
+        }
+    }
+}
+
+    /*        */
+    /*   SWUP */
+    /*        */
+    
+    html.is-changing .transition-fade {
+        transition: opacity 1000ms;
+        opacity: 1;
+    }    
+    html.is-animating .transition-fade {
+        opacity: 0;
+    }
+
+    body {
+        position: relative;
+    }
+
+
+    .swup-overlay {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+    }
+    .swup-overlay:before {        
+        content: "";        
+        width: 100%;
+        height: 100%;                
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;        
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .swup-overlay.blue:before {
+        background-color: $blue;        
+    }
+    .swup-overlay.yellow:before {
+        background-color: $yellow;
+    }
+    .swup-overlay.purple:before {
+        background-color: $purple;
+    }
+    .swup-overlay.white:before {
+        background-color: $white;
+    }
+
+    html.is-changing .swup-overlay:before {
+        transition: transform 0.5s linear;
+        opacity: 1;        
+    }
+    html.is-animating .swup-overlay:before {
+        transform: translate3d(0%, 0, 0);
+    }
+    // finish 
+    html.is-rendering .swup-overlay:before {
+        transform: translate3d(100%, 0, 0);
+    }    
