@@ -139,7 +139,7 @@ ul, li {
     /*        */
     
     html.is-changing .transition-fade {
-        transition: opacity 1000ms;
+        transition: opacity 750ms;
         opacity: 1;
     }    
     html.is-animating .transition-fade {
@@ -190,7 +190,7 @@ ul, li {
     }
 
     html.is-changing .swup-overlay:before {
-        transition: transform 0.5s linear;
+        transition: transform 0.33s linear;
         opacity: 1;        
     }
     html.is-animating .swup-overlay:before {
