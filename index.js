@@ -4,8 +4,6 @@ const swup = new Swup( {
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {    
     startPage ();    
 	//新しいページは読み込み完了になる場合startPage()関数を呼び出す
