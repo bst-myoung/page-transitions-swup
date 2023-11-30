@@ -129,7 +129,7 @@ ul, li {
 /*   SWUP */
 /*        */
 html.is-changing .transition-fade {
-  transition: opacity 750ms;
+  transition: opacity 250ms;
   opacity: 1;
 }
 
@@ -188,7 +188,7 @@ body {
 }
 
 html.is-changing .swup-overlay:before {
-  transition: transform 0.33s linear;
+  transition: transform 250ms linear;
   opacity: 1;
 }
 
